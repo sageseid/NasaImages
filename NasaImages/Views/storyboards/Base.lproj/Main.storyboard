@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nasa Images ListVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NasaImagesListVC" customModule="NasaImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fGL-h4-D5K">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="Nei-W2-q5C">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   The Milky Way" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQV-Om-icg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <color key="backgroundColor" red="0.9622407556" green="0.96066278220000001" blue="0.95913940669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KLo-1Y-mYc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZQV-Om-icg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="20i-aU-cGe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZQV-Om-icg" secondAttribute="trailing" id="4x7-oa-gQX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fGL-h4-D5K" secondAttribute="bottom" id="Frc-po-YtN"/>
+                            <constraint firstItem="Nei-W2-q5C" firstAttribute="centerX" secondItem="fGL-h4-D5K" secondAttribute="centerX" id="L49-Tz-FPb"/>
+                            <constraint firstItem="fGL-h4-D5K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lhy-w2-djv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fGL-h4-D5K" secondAttribute="trailing" id="UGT-sZ-MLg"/>
+                            <constraint firstItem="ZQV-Om-icg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WQa-bd-YlO"/>
+                            <constraint firstItem="fGL-h4-D5K" firstAttribute="top" secondItem="ZQV-Om-icg" secondAttribute="bottom" id="sWo-ij-zn1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ky5-26-fJV"/>
+                    <connections>
+                        <outlet property="ActivityIndicator" destination="Nei-W2-q5C" id="BpY-Jv-oWv"/>
+                        <outlet property="TableView" destination="fGL-h4-D5K" id="NB6-Zd-XkT"/>
+                        <segue destination="M35-jU-IYy" kind="presentation" identifier="gotoDetails" modalPresentationStyle="fullScreen" id="HLb-mF-3nm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
+        </scene>
+        <!--Nasa Images DetailsVC-->
+        <scene sceneID="rJv-lu-idT">
+            <objects>
+                <viewController id="M35-jU-IYy" customClass="NasaImagesDetailsVC" customModule="NasaImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jKZ-Kz-VqO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sT-UJ-jOI">
+                                <rect key="frame" x="0.0" y="97.5" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="IMd-Ra-BUI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OC3-GI-ziA">
+                                <rect key="frame" x="16" y="372.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAG-Xh-MCN">
+                                <rect key="frame" x="16" y="403.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lJK-TY-QPf">
+                                <rect key="frame" x="16" y="440.5" width="382" height="405.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">VSHAIP test in 7x10ft#1 W.T. (multiple model configruations) V-22 helicopter shipboard aerodynamic interaction program: L-R seated Allen Wadcox, (standind) Mark Betzina, seated in front of computer Gloria Yamauchi, in background Kurt Long.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lessthan" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jmh-AK-mzN">
+                                <rect key="frame" x="8" y="62" width="16" height="9.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="apJ-zS-sJs"/>
+                                    <constraint firstAttribute="width" constant="16" id="cXu-BQ-SCs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU5-5r-3cd">
+                                <rect key="frame" x="24" y="52" width="95.5" height="29.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="The Milky Way">
+                                    <fontDescription key="titleFontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backBtnClicked:" destination="M35-jU-IYy" eventType="touchUpInside" id="N75-Ds-TpD"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="xZj-BJ-W8O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2lS-4d-P5t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bU5-5r-3cd" firstAttribute="leading" secondItem="Jmh-AK-mzN" secondAttribute="trailing" id="0Pe-OC-HQW"/>
+                            <constraint firstItem="bU5-5r-3cd" firstAttribute="top" secondItem="2lS-4d-P5t" secondAttribute="top" constant="8" id="61S-5N-iMg"/>
+                            <constraint firstItem="2lS-4d-P5t" firstAttribute="trailing" secondItem="lJK-TY-QPf" secondAttribute="trailing" constant="16" id="6Tt-YB-PZi"/>
+                            <constraint firstItem="2lS-4d-P5t" firstAttribute="bottom" secondItem="lJK-TY-QPf" secondAttribute="bottom" constant="16" id="6cY-Zx-uWI"/>
+                            <constraint firstItem="OC3-GI-ziA" firstAttribute="top" secondItem="0sT-UJ-jOI" secondAttribute="bottom" constant="25" id="8rO-L3-bDo"/>
+                            <constraint firstItem="0sT-UJ-jOI" firstAttribute="trailing" secondItem="2lS-4d-P5t" secondAttribute="trailing" id="F8W-mJ-bFG"/>
+                            <constraint firstItem="ZAG-Xh-MCN" firstAttribute="leading" secondItem="2lS-4d-P5t" secondAttribute="leading" constant="16" id="HsK-TR-oFT"/>
+                            <constraint firstItem="lJK-TY-QPf" firstAttribute="leading" secondItem="2lS-4d-P5t" secondAttribute="leading" constant="16" id="JPk-3H-Lmx"/>
+                            <constraint firstItem="OC3-GI-ziA" firstAttribute="leading" secondItem="2lS-4d-P5t" secondAttribute="leading" constant="16" id="KRD-Vc-xtp"/>
+                            <constraint firstItem="0sT-UJ-jOI" firstAttribute="leading" secondItem="2lS-4d-P5t" secondAttribute="leading" id="Kts-if-ITd"/>
+                            <constraint firstItem="Jmh-AK-mzN" firstAttribute="centerY" secondItem="bU5-5r-3cd" secondAttribute="centerY" id="Ygg-tL-6AZ"/>
+                            <constraint firstItem="0sT-UJ-jOI" firstAttribute="top" secondItem="bU5-5r-3cd" secondAttribute="bottom" constant="16" id="aIW-ZL-aYa"/>
+                            <constraint firstItem="lJK-TY-QPf" firstAttribute="top" secondItem="ZAG-Xh-MCN" secondAttribute="bottom" constant="16" id="fSA-Wi-58o"/>
+                            <constraint firstItem="2lS-4d-P5t" firstAttribute="trailing" secondItem="OC3-GI-ziA" secondAttribute="trailing" constant="16" id="j0r-pC-aOV"/>
+                            <constraint firstItem="2lS-4d-P5t" firstAttribute="trailing" secondItem="ZAG-Xh-MCN" secondAttribute="trailing" constant="16" id="tZC-rs-IuM"/>
+                            <constraint firstItem="Jmh-AK-mzN" firstAttribute="leading" secondItem="2lS-4d-P5t" secondAttribute="leading" constant="8" id="un2-B7-bwH"/>
+                            <constraint firstItem="ZAG-Xh-MCN" firstAttribute="top" secondItem="OC3-GI-ziA" secondAttribute="bottom" constant="10" id="zo4-jG-9qc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8FS-Vf-qTj"/>
+                    <connections>
+                        <outlet property="descLabel" destination="ZAG-Xh-MCN" id="Z1d-Hu-2td"/>
+                        <outlet property="descText" destination="lJK-TY-QPf" id="DCT-ED-41j"/>
+                        <outlet property="imageView" destination="0sT-UJ-jOI" id="J8h-dY-ROG"/>
+                        <outlet property="titleLabel" destination="OC3-GI-ziA" id="fIm-gk-wmX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SO4-BH-2UU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2075.36231884058" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lessthan" catalog="system" width="128" height="111"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
