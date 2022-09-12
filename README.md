@@ -13,7 +13,6 @@ Designs:  https://www.figma.com/file/zy4XFycrYjVDp9zYbPSGCb/Nasa-Challenge?node-
 - Networking: URLSession
 - UI: UIKit
 - Architecture: MVVM
-- ViewModelsfor storing UI state
 - Custom Built Image Loader for image fetching and caching
 - Swift standard coding/decoding for custom objects
 
